@@ -42,7 +42,10 @@ virtualenv virtual
 virtual\Scripts\activate
 ```
 Once you are in your environment you can install the dependencies.
-To do so just run : pip install -r requirements.txt
+To do so just run : 
+```bash
+pip install -r requirements.txt
+```
 Wait and congrats your dependencies were successfully installed.
 You can now run manage.py.
 
