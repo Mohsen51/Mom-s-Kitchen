@@ -1,0 +1,36 @@
+<DOCTYPE>
+<html>
+	<head>
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script> 
+		<div ng-app="myApp" ng-controller="returnData" ng-init="displayData()">
+
+			<form  method="GET" action="{% url 'display_a_conversation' %}">
+				 {% csrf_token %}
+				 <input name="uuid">
+				<button type="submit"> aaaa</button>
+			</form>
+		
+	</head>
+	<body>
+	</body>
+</html>
+
+
+<script>
+var app = angular.module('myApp', []);
+
+app.controller('returnData', function($scope, $http) {
+	
+	$scope.displayData = function(){
+		$http.get("get_conversations")
+		.success(function(data){
+			console.log(data)
+			
+		});
+	}
+
+
+
+});
+
+</script>

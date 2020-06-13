@@ -1,0 +1,54 @@
+{% if data %}
+    <script>
+        alert('{{ data }}');
+    </script>
+    {% endif %}
+
+    {% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Sign Up</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="{% static "blog/authentification/css/Sign_up.css" %}">
+    </head>
+    
+    <body>
+        <h1>Mom's Kitchen</h1>
+        <img src="{% static "blog/authentification/picture/red_logo.svg" %}"" alt="logo">
+        <h2>Let's create your account</h2>
+        <form action="{% url 'post_sign_up' %}" enctype='multipart/form-data' method="post">
+        {% csrf_token %}
+            <div class="form-group">
+                <label for="usr"></label>
+                 <input id="name" name="name" type="text" placeholder="Enter your name">
+                <input type="text" name="email" placeholder="Enter your email">
+                <input id="psw" name="pass" type="password" placeholder="Enter your password">
+                <button type="button" onclick="displayPass()" class="fas fa-binoculars"></button>
+            </div>
+            <div class="form-group form-check">
+                <button type="submit">Sign up</button>
+            </div>
+            <button id="signIn" type="button" class="btn btn-link">Do you already have one ?</button>
+        </form>
+    </body>
+    <script>
+        function displayPass() {
+            var pass = document.getElementById("psw").type;
+            if (pass==="password")
+                document.getElementById("psw").type = "text";
+            else    
+            document.getElementById("psw").type = "password";
+        }
+
+
+       document.querySelector('#signIn').onclick = function(e) {
+       window.location = "blog/signIn";
+        };
+    </script>
+</html>

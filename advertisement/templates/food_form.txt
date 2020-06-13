@@ -1,0 +1,34 @@
+{% if data %}
+	<script>
+	    alert('{{ data }}');
+	</script>
+	{% endif %}
+	
+	<html lang="en">
+	<head>
+	<meta charset="UTF-8">
+	<title>food </title>
+	
+	</head>
+	<body>
+	<form action="{% url 'post_food_form' %}" enctype='multipart/form-data' method="post">
+	    {% csrf_token %}
+	   Category:
+	    <input type="text" name="foodCategory"><br><br>
+	   foodTitle :
+	    <input type="text" name="foodTitle"><br><br>
+	    Description:
+	    <input type="text" name="foodDescription"><br><br>
+	     vegan:
+	     <input type="text" name="vegStatus"><br><br>
+	     vendor:
+	     <input type="text" name="vendor"><br><br>
+	      Price:
+	     <input type="text" name="price"><br><br>
+
+	    <input type="file" name="image" accept="image/gif, image/jpeg, image/png">
+	    <input type="submit" value="submit">
+	</form>
+	
+	</body>
+	</html>

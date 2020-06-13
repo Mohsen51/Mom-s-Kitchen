@@ -1,0 +1,131 @@
+@font-face {
+    font-family: "Catamaran";
+    src: url('Catamaran-Black.ttf') format('truetype');
+}
+
+@media only screen and (max-width: 802px){
+    .txt {
+        display: none;
+    }
+}
+
+* {
+    font-family: 'Catamaran';
+    padding: 3px;
+}
+
+footer p {
+    margin-top: 200px; 
+    padding-right: 5px;
+    text-align: right;
+}
+
+header {
+    margin-bottom: 100px;
+}
+
+.nav-item {
+    margin-left: 20px;
+}
+
+.nav-logo{
+    width: 32px;
+    height: 32px;
+    margin-right: 10px;
+}
+
+.dropdown {
+    margin-left: auto;
+    margin-right: 40px;
+}
+
+.container{
+    margin-top: 4%;
+}
+
+.msg-header  {
+    border: 1px solid black;
+    width: 100%;
+    height: 10%;
+    border-bottom: none;
+    display: inline-block;
+    background-color: lightgrey;
+    box-shadow: 2px 2px 2px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+}
+
+.chat-page {
+    padding: 0 0 50px 0;
+}
+
+.chats {
+    padding: 30px 15px 0 25px;
+}
+
+.msg-inbox {
+    border: 1px solid black;
+    overflow: hidden;
+    padding-bottom: 30px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.msg-page {
+    height: 516px;
+    overflow-y: auto;
+}
+
+.received-msg {
+    display: inline-block;
+    padding: 0 0 0 10px;
+    vertical-align: top;
+    width: 50%;
+}
+
+.received-msg p {
+    word-wrap: break-word;
+    background: gray none repeat scroll 0 0;
+    border-radius: 10px;
+    color: azure;
+    font-size: 14px;
+    margin: 0;
+    padding: 5px 10px 5px 12px;
+    width: 100%;
+}
+
+.sent-chats {
+    overflow: hidden;
+    margin: 26px 20px;
+}
+
+.sent-msg {
+    float: left;
+    width: 46%;
+    margin-left: 54%;
+}
+
+.sent-msg p {
+    word-wrap: break-word;
+    background: blue none repeat scroll 0 0;
+    border-radius: 10px;
+    color: azure;
+    font-size: 14px;
+    margin: 0;
+    padding: 5px 10px 5px 12px;
+    width: 100%;
+}
+
+#inputDiv {
+    position: -webkit-sticky;
+    position: sticky;
+    bottom: 1rem;
+    align-self: flex-end;
+}
+
+h4 {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 20px;
+    margin-left: 10px;
+}

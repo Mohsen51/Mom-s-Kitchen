@@ -1,0 +1,43 @@
+<DOCTYPE>
+<html>
+	<head>
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script> 
+		
+		
+	</head>
+	<body>
+		<div ng-app="myApp" ng-controller="returnData" ng-init="displayData()">
+
+		<form action="{% url 'add_message' %}" enctype='multipart/form-data' method="post">
+			 {% csrf_token %}
+			<input type="text" name="message">
+			<input type="hidden" name="uuid" value='{{data }}'>
+			<button  type="submit">submit</button> 
+		</form>
+	</div>
+	</body>
+</html>
+
+
+<script>
+var app = angular.module('myApp', []);
+
+{% if data %}
+	var uuid = '{{data }}';
+{% endif %}
+
+app.controller('returnData', function($scope, $http) {
+	
+	$scope.displayData = function(){
+		$http.get("get_messages?uuid="+uuid)
+		.success(function(data){
+			console.log(data);
+			
+		});
+	}
+
+
+	
+});
+
+</script>

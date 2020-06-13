@@ -1,0 +1,57 @@
+{% if data %}
+    <script>
+        alert('{{ data }}');
+    </script>
+    {% endif %}
+
+    {% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Sign In</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="{% static "blog/authentification/css/Sign_up.css" %}">
+    </head>
+   
+    <body>
+        <h1>Mom's Kitchen</h1>
+        <img src="{% static "blog/authentification/picture/red_logo.svg" %}" alt="logo">
+        <h2>Let's connect yourself</h2>
+       <form action="{% url 'post_sign_in' %}" method="post">
+        {% csrf_token %}
+            <div class="form-group">
+                <label for="usr"></label>
+                <input type="text" name="email" placeholder="Enter your email">
+                <input id="psw"name="pass" type="password" placeholder="Enter your password">
+                <button type="button" onclick="displayPass()" class="fas fa-binoculars"></button>
+            </div>
+            <div class="form-group form-check">
+                <button type="submit">Sign in</button>
+            </div>
+            <button id="signUp" type="button" class="btn btn-link">You don't have one ?</button>
+            <button id="forgotPAss" type="button" class="btn btn-link">Forgot password</button>
+        </form>
+    </body>
+     <script>
+        function displayPass() {
+            var pass = document.getElementById("psw").type;
+            if (pass==="password")
+                document.getElementById("psw").type = "text";
+            else    
+            document.getElementById("psw").type = "password";
+        }
+
+           document.querySelector('#signUp').onclick = function(e) {
+           window.location = "blog/signUp";
+            };
+
+         document.querySelector('#forgotPAss').onclick = function(e) {
+           window.location = "passwordReset";
+        };
+    </script>
+</html>

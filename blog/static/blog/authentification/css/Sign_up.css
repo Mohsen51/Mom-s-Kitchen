@@ -1,0 +1,50 @@
+@font-face {
+    font-family: "Catamaran";
+    src: url('Catamaran-Black.ttf') format('truetype');
+}
+
+body {
+    font-family: 'Catamaran';
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
+h1{
+    margin-top: 10px;
+}
+
+h2 {
+    margin-top: 100px;
+}
+
+img {
+    margin-top: 50px;
+    width: 128px;
+    height: 128px;
+}
+
+::placeholder {
+    color: #f9b4b4;
+    text-align: center;
+}
+
+input, button, textarea {
+    background-color: red; 
+    border: red;
+    color: white;
+    padding: 5px 10px;
+    font-size: 20px;
+    border-radius: 20px;
+    margin-left: 10px;
+}
+
+.form-check{
+    margin-top: 20px;
+    margin-right: 40px;
+}
+
+.fa-binoculars{
+    background-color: black; 
+    border: white;
+}

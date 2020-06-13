@@ -1,0 +1,25 @@
+{% if data %}
+	<script>
+	    alert('{{ data }}');
+	</script>
+	{% endif %}
+	
+	<html lang="en">
+	<head>
+	<meta charset="UTF-8">
+	<title>Sign</title>
+	
+	</head>
+	<body>
+	<form action="{% url 'post_sign_in' %}" method="post">
+	    {% csrf_token %}
+	    Email :
+	    <input type="email" name="email"><br><br>
+	    Password:
+	    <input type="password" name="pass"><br><br>
+	    <a href="{% url 'password_reset' %}"> reset password </a>
+	    <input type="submit" value="SignUp">
+	   
+	</form>
+	</body>
+	</html>

@@ -1,0 +1,57 @@
+
+{% load static %}
+
+{% if data %}
+    <script>
+        alert('{{ data }}');
+    </script>
+    {% endif %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+         {% block js %} {% endblock %}
+        <title>{% block title %}MOM'S KITCHEN{% endblock %}</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+       {% block css %} <link rel="stylesheet" type="text/css" href="{% static "blog/authentification/css/Home.css" %}">{% endblock %}
+    </head>
+    <body>
+        <header>
+            <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+                <a class="nav-logo" href=""><img src="{% static "blog/authentification/picture/red_logo.svg" %}"  alt="logo" href="#"></a>
+                <ul id="lnks" class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'display_data' %}"><i class="fas fa-search"></i><span class="txt">Find meal</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'food_form' %}"><i class="fas fa-utensils"></i><span class="txt">Propose meal</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href=""><i class="fas fa-question"></i><span class="txt">FAQ</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href=""><i class="fas fa-phone"></i><span class="txt">Contact us</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href=""><i class="fas fa-info"></i><span class="txt">Help</span></a>
+                    </li>
+                </ul>
+                <div class="dropdown">
+                    <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="far fa-id-badge"></i><span class="txt">Account</span></button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="{% url 'display_all_conversation' %}">Messages</a>
+                        <a class="dropdown-item" href="#">Information</a>
+                        <a class="dropdown-item" href="#">Disconnect</a>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        {% block content %}{% endblock %}
+
+
+</html>
+       

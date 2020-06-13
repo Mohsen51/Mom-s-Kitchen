@@ -1,0 +1,102 @@
+
+	
+	<html lang="en">
+	<head>
+	<meta charset="UTF-8">
+	<title>food </title>
+	
+	</head>
+	<body>
+	
+	</body>
+
+
+<script src="https://www.gstatic.com/firebasejs/5.9.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.9.2/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.9.2/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.9.2/firebase-storage.js"></script>
+
+<script>
+  // Initialize Firebase
+ 
+
+  var config = {
+    apiKey: "AIzaSyC0TACrDN13PHAGiKz29_7OnjjYvcR9-7Y",
+    authDomain: "homefood-b7713.firebaseapp.com",
+    databaseURL: "https://homefood-b7713.firebaseio.com",
+    projectId: "homefood-b7713",
+    storageBucket: "homefood-b7713.appspot.com",
+    messagingSenderId: "1004772233083"
+  };
+  firebase.initializeApp(config);
+
+  var db = firebase.firestore();
+  var storage = firebase.storage(); 
+
+
+  function data_display(doc){
+  		var body = document.querySelector('.w3ls_w3l_banner_nav_right_grid w3ls_w3l_banner_nav_right_grid_sub');
+  		var div1 = document.createElement("DIV");
+  		div1.className = "col-md-3 w3ls_w3l_banner_left w3ls_w3l_banner_left_asdfdfd";
+  		var div2 = document.createElement("DIV");
+  		div2.className = "hover14 column";
+  		var div3 = document.createElement("DIV");
+  		div3.className = "agile_top_brand_left_grid w3l_agile_top_brand_left_grid";
+  		var div4 = document.createElement("DIV");
+  		div4.className = "agile_top_brand_left_grid1";
+  		var figure = document.createElement("figure");
+  		var div5 = document.createElement("DIV");
+  		div5.className = "snipcart-item block";
+  		var div6 = document.createElement("DIV");
+  		div6.className = "snipcart-thumb";
+  		var img = document.createElement("IMG");
+  		var a = document.createElement("a");
+  		var h = document.createElement("H4");
+  		var foodDescription = document.createTextNode(doc.data().FoodDescription);
+  		var price = document.createTextNode("$"+doc.data().Price);
+
+  		img.src =  doc.data().ProductImageUrl;
+  		img.style.width = '220px';
+  		img.style.height = '150px';
+  		img.class = "img-responsive";
+  		a.href = "#";
+
+  		div6.appendChild(a);
+  		div6.appendChild(h);
+  		div6.appendChild(foodDescription);
+  		h.appendChild(price);
+  		
+  		a.appendChild(img);
+ 		
+ 		
+ 		
+ 		
+ 		
+ 		div5.appendChild(div6);
+ 		figure.appendChild(div5);
+ 		div4.appendChild(figure);
+ 		div3.appendChild(div4);
+ 		div2.appendChild(div3);
+ 		div1.appendChild(div2);
+ 		//body.appendChild(div1); 
+
+
+
+  }
+
+
+  db.collection("Listings").get().then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+        console.log(`${doc.id} => ${doc.data().Vendor}`);
+      	data_display(doc)
+
+
+});
+    });
+
+
+ 
+
+</script>
+
+	</html>

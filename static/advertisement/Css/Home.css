@@ -1,0 +1,72 @@
+@font-face {
+    font-family: "Catamaran";
+    src: url('Catamaran-Black.ttf') format('truetype');
+}
+
+@media only screen and (max-width: 802px){
+    .txt {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 576px){
+    .card img {
+        width: 5%;
+    }
+    header {
+        margin-bottom: 45%;
+    }
+}
+
+* {
+    font-family: 'Catamaran';
+    padding: 3px;
+}
+
+form {
+    margin-top: 80px;
+}
+
+.nav-item {
+    margin-left: 20px;
+}
+
+.nav-logo{
+    min-width: 32px;
+    height: 32px;
+    margin-right: 10px;
+}
+
+.dropdown {
+    margin-left: auto;
+    margin-right: 40px;
+}
+
+.container-fluid{
+    max-width: 500 !important;
+    position: static;
+    margin-top : 4%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}
+
+footer p {
+    margin-top: 200px; 
+    padding-right: 5px;
+    text-align: right;
+}
+
+.card {
+    width: 30%;
+    position: static;
+    margin: 30px;
+    margin-left: auto;
+    text-align: center;
+    display: inline-grid;
+}
+
+.card img{
+    position : static; 
+    display: block;
+}
