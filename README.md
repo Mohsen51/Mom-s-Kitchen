@@ -27,15 +27,20 @@ requests
 First download python 3 from the website.
 Once you downloaded python you must install pip.
 To do so run the following commands in your favourite terminal bash or cmd :
+```bash
 curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 python3 get-pip.py
+```
 
 To launch the project and download the prerequisties the best solution is to work in a virtual environment.
 First download virtualenv using the command : pip install virtualenv
 Once you have downloaded it, create your environment.
 Go to the source of the project.
-Run the following command : virtualenv virtual
-Then activate it : virtual\Scripts\activate
+Run the following command :
+```bash
+virtualenv virtual
+virtual\Scripts\activate
+```
 Once you are in your environment you can install the dependencies.
 To do so just run : pip install -r requirements.txt
 Wait and congrats your dependencies were successfully installed.
